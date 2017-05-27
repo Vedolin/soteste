@@ -1,0 +1,35 @@
+Tenho estas anotacoes:
+
+cd into directory
+bundle init
+
+open Gemfile
+gem 'ruby_gntp'
+gem 'guard'
+gem 'guard-minitest'
+gem 'minitest-reporters'
+
+
+bundle
+
+bundle exec guard  init minitest
+create Guardfile (learn)
+
+code goes on /lib
+test goes in /test
+
+create foo.rb
+create test_foo.rb
+
+bundle exec guard (starts listening)
+
+on test_foo.rb
+require 'minitest/autorun'
+require 'minitest/reporters'
+Minitest::Reporters.use!
+require_relative '../lib/foo'
+class Foo < Minitest::Test
+def test_um
+	assert_equal 42,43
+end
+end
